@@ -25,11 +25,11 @@ body {
 
 
 /** BUTTONS*/
-$colorPink: #e95678;
-$colorPinkHover:#c23455;
+$colorPink: #f70f45;
+$colorPinkHover:#ab5569;
 
-$colorBlue: #25b0bc;
-$colorBlueHover:#166b72;
+$colorBlue: #14717a;
+$colorBlueHover:#45d3df;
 
 @mixin button($class, $color, $colorHover) {
   .button.#{$class}{background: $color;}
