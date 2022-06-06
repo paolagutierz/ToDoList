@@ -1,23 +1,9 @@
-import React from "react";
-
+import {React,useContext} from "react";
+import { TodoContext } from "../providers/todo-context";
 import Checkbox from "./Checkbox";
 
-const TaskList = props => {
-    const { list, setList } = props;
-
-    const onChangeStatus = e => {
-        const { name, checked } = e.target;
-        const updateList = list.map(item => ({
-          ...item,
-          done: item.id === name ? checked : item.done
-        }));
-        setList(updateList);
-      };
-
-      const onClickRemoveItem = e => {
-        const updateList = list.filter(item => !item.done);
-        setList(updateList);
-      };
+const TaskList = () => {
+    const { list,onChangeStatus,onClickRemoveItem } = useContext(TodoContext);
 
     const chk = list.map(item => (
         <Checkbox key={item.id} data={item} onChange={onChangeStatus} />

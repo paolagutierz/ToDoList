@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+import { TodoContext } from "../providers/todo-context";
 
-const FormTodo = props => {
 
-  const { handleAddItem } = props; 
-  const [description, setDescription] = useState(""); // (F-1)
+const FormTodo = () => {
+
+  const { handleAddItem } = useContext(TodoContext); 
+  const [description, setDescription] = useState(""); 
 
   const handleSubmit = e => {
     e.preventDefault(); 
